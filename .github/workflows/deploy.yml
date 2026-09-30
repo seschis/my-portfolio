@@ -16,10 +16,11 @@ jobs:
         with:
           submodules: true
 
-      - name: Setup Hugo (extended, latest)
+      - name: Setup Hugo (extended)
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 'extended'
+          hugo-version: '0.167.0'
+          extended: true
 
       - name: Build site with minification
         run: hugo --minify --baseURL "$BASE_URL"
