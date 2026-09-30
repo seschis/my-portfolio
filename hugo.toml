@@ -1,0 +1,53 @@
+baseURL = 'https://seschis.github.io/my-portfolio/'
+locale = 'en-us'
+title = 'Software Engineer & Thinker'
+theme = 'PaperMod'
+
+[params]
+env = 'production'
+description = 'Personal engineering projects and thoughts on system architecture and problem-solving.'
+defaultTheme = 'auto'
+ShowReadingTime = true
+ShowShareButtons = false
+ShowPostNavLinks = true
+ShowBreadCrumbs = false
+ShowCodeCopyButtons = true
+ShowToc = true
+TocOpen = false
+comments = false
+assetsDir = 'assets'
+
+[[params.socialIcons]]
+name = 'github'
+url = 'https://github.com/seschis'
+
+[[params.socialIcons]]
+name = 'linkedin'
+url = 'https://www.linkedin.com/in/shaneschisler'
+
+[params.profileMode]
+enabled = true
+title = "Hi, I'm a Software Engineer & Thinker 👋"
+subtitle = 'Welcome to my digital home. Here I document my personal engineering projects and write down my thoughts on system architecture and problem-solving.'
+
+[[params.profileMode.buttons]]
+name = '📝 Read My Thoughts'
+url = '/blog/'
+
+[[params.profileMode.buttons]]
+name = '💼 View My Projects'
+url = '/projects/'
+
+[[params.profileMode.buttons]]
+name = '📄 Download CV'
+url = '/resume.pdf'
+
+[[menu.main]]
+name = 'Blog'
+url = '/blog/'
+weight = 1
+
+[[menu.main]]
+name = 'Projects'
+url = '/projects/'
+weight = 2
