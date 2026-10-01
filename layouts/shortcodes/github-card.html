@@ -1,0 +1,8 @@
+{{- $repo := $.Page.Params.repo -}}
+{{- with $repo -}}
+<p>
+  <a href="https://github.com/{{ . }}" rel="noopener"><strong>View the source on GitHub &rarr;</strong></a>
+  <a href="https://github.com/{{ . }}" rel="noopener"><img src="https://img.shields.io/github/stars/{{ . }}?style=flat-square" alt="GitHub stars" loading="lazy"></a>
+  <a href="https://github.com/{{ . }}" rel="noopener"><img src="https://img.shields.io/github/forks/{{ . }}?style=flat-square" alt="GitHub forks" loading="lazy"></a>
+</p>
+{{- end -}}

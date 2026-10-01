@@ -1,0 +1,24 @@
+{{- $repo := $.Page.Params.repo -}}
+{{- with $repo -}}
+{{- /* Embeds the repo's live README.md at build time.
+     Requires a README.md on the default branch. Relative "](./...)" links
+     are rewritten to point at the repo; absolute URLs are untouched.
+     README assets (images) must use absolute raw.githubusercontent.com URLs.
+     NOTE: strings.Replace must be used in command form — the pipe form
+     silently drops the piped value on recent Hugo versions. */ -}}
+{{- $url := printf "https://raw.githubusercontent.com/%s/HEAD/README.md" . -}}
+{{- with try (resources.GetRemote $url) -}}
+  {{- with .Err -}}
+    {{- errorf "github-readme: failed to fetch README for %s: %s" $repo . -}}
+  {{- else with .Value -}}
+    {{- $base := printf "](https://github.com/%s/blob/HEAD/" $repo -}}
+    {{- $replaced := strings.Replace .Content "](./" $base -}}
+    {{- $html := $replaced | $.Page.RenderString (dict "display" "block") -}}
+<div class="github-readme">
+{{- $html -}}
+</div>
+  {{- else -}}
+    {{- errorf "github-readme: no README.md found for %s" $repo -}}
+  {{- end -}}
+{{- end -}}
+{{- end -}}

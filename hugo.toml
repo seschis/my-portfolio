@@ -3,6 +3,9 @@ locale = 'en-us'
 title = 'Software Engineer & Thinker'
 theme = 'PaperMod'
 
+[markup.goldmark.renderer]
+unsafe = true
+
 [params]
 env = 'production'
 description = 'Personal engineering projects and thoughts on system architecture and problem-solving.'
