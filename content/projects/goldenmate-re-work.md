@@ -1,9 +1,9 @@
 ---
-title: '{{ replace .File.ContentBaseName "-" " " | title }}'
-date: {{ .Date }}
-summary: 'One-line hook shown under the title in the projects list'
-tags: []
-repo: 'seschis/your-repo'
+title: 'GoldenMate BMS Reverse Engineering'
+date: 2026-10-01T18:09:42-04:00
+summary: 'Tearing down a GoldenMate battery management system: PCB analysis, firmware extraction over SWD, and Ghidra on an ARM Cortex-M0.'
+tags: ['reverse-engineering', 'embedded', 'ghidra', 'hardware']
+repo: 'seschis/goldenmate-re-work'
 draft: true
 ---
 
@@ -11,7 +11,7 @@ draft: true
 
 ## TL;DR
 
-Two or three sentences: what it does and why you built it.
+A hardware reverse-engineering project on the GoldenMate BMS (Battery Management System). The repo documents the full path: annotated PCB analysis, firmware extraction via an ST-LINK SWD probe (with a custom OpenOCD build to support the Fudan Micro FM33LC026N Cortex-M0), decompilation and analysis in Ghidra, and signal tracing across the BMS ASIC, EEPROM, and RS485 interface.
 
 ## The problem
 
@@ -38,7 +38,5 @@ CAUTION: this couples the page to the repo's README — future edits there chang
 page. The build detects references that won't resolve on this site (relative links/
 images) and warns in the CI log, but the deploy still ships. Prefer MODE A unless the
 repo's README is self-contained (absolute asset URLs).
-If so, add this shortcode on its own line:
-
-    {{< github-readme >}}
+If so, uncomment the github-readme shortcode line below.
 */%}}
