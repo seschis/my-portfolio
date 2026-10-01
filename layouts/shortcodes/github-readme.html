@@ -1,9 +1,16 @@
 {{- $repo := $.Page.Params.repo -}}
 {{- with $repo -}}
 {{- /* Embeds the repo's live README.md at build time.
-     Requires a README.md on the default branch. Relative "](./...)" links
-     are rewritten to point at the repo; absolute URLs are untouched.
-     README assets (images) must use absolute raw.githubusercontent.com URLs.
+     Requires a README.md on the default branch.
+
+     SAFETY: embedding couples this page to the repo's README. The build
+     detects any link or image reference that would not resolve on this
+     site (relative refs) and emits a warning naming them — the deploy is
+     never blocked, but breakage is never silent. To make the check fatal,
+     change warnf to errorf below.
+
+     MECHANICS: explicit "](./...)" markdown refs are rewritten to point at
+     the repo; all other refs must already be absolute (http(s), //, /, #).
      NOTE: strings.Replace must be used in command form — the pipe form
      silently drops the piped value on recent Hugo versions. */ -}}
 {{- $url := printf "https://raw.githubusercontent.com/%s/HEAD/README.md" . -}}
@@ -12,10 +19,32 @@
     {{- errorf "github-readme: failed to fetch README for %s: %s" $repo . -}}
   {{- else with .Value -}}
     {{- $base := printf "](https://github.com/%s/blob/HEAD/" $repo -}}
-    {{- $replaced := strings.Replace .Content "](./" $base -}}
-    {{- $html := $replaced | $.Page.RenderString (dict "display" "block") -}}
+    {{- $rewritten := strings.Replace .Content "](./" $base -}}
+    {{- $rendered := $rewritten | $.Page.RenderString (dict "display" "block") -}}
+    {{- $rel := slice -}}
+    {{- range findRE `href="[^"]+"` (printf "%s" $rendered) -}}
+      {{- $v := . | strings.TrimPrefix `href="` | strings.TrimSuffix `"` -}}
+      {{- if not (or (strings.HasPrefix $v "http") (strings.HasPrefix $v "//") (strings.HasPrefix $v "/") (strings.HasPrefix $v "#") (strings.HasPrefix $v "mailto:")) -}}
+        {{- $rel = $rel | append $v -}}
+      {{- end -}}
+    {{- end -}}
+    {{- range findRE `src="[^"]+"` (printf "%s" $rendered) -}}
+      {{- $v := . | strings.TrimPrefix `src="` | strings.TrimSuffix `"` -}}
+      {{- if not (or (strings.HasPrefix $v "http") (strings.HasPrefix $v "//") (strings.HasPrefix $v "/") (strings.HasPrefix $v "#") (strings.HasPrefix $v "data:")) -}}
+        {{- $rel = $rel | append $v -}}
+      {{- end -}}
+    {{- end -}}
+    {{- range findRE `src='[^']+'` (printf "%s" $rendered) -}}
+      {{- $v := . | strings.TrimPrefix `src='` | strings.TrimSuffix `'` -}}
+      {{- if not (or (strings.HasPrefix $v "http") (strings.HasPrefix $v "//") (strings.HasPrefix $v "/") (strings.HasPrefix $v "#") (strings.HasPrefix $v "data:")) -}}
+        {{- $rel = $rel | append $v -}}
+      {{- end -}}
+    {{- end -}}
+    {{- with $rel -}}
+      {{- warnf "github-readme: %d relative reference(s) in %s's README will not resolve on this site: %v. Make them absolute in the README, or use github-card (link out) instead of the embed." (len .) $repo . -}}
+    {{- end -}}
 <div class="github-readme">
-{{- $html -}}
+{{- $rendered -}}
 </div>
   {{- else -}}
     {{- errorf "github-readme: no README.md found for %s" $repo -}}

@@ -33,7 +33,12 @@ Numbers where possible: latency, throughput, users, hours saved.
 
 {{% /*
 MODE B: embed the repo's live README instead of (or in addition to) your own narrative.
-Requires a README.md in the repo. Uncomment the line below:
+Requires a README.md in the repo.
+CAUTION: this couples the page to the repo's README — future edits there change this
+page. The build detects references that won't resolve on this site (relative links/
+images) and warns in the CI log, but the deploy still ships. Prefer MODE A unless the
+repo's README is self-contained (absolute asset URLs).
+If so, uncomment the line below:
 
 {{< github-readme >}}
 */ -%}}

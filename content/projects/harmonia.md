@@ -32,5 +32,3 @@ Harmonia is a Go CLI that triages security scanner findings using multiple LLMs:
 ## What I'd do differently
 
 <!-- TODO -->
-
-{{< github-readme >}}
