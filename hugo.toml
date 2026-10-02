@@ -30,6 +30,10 @@ url = 'https://www.linkedin.com/in/shaneschisler'
 
 [params.profileMode]
 enabled = true
+imageUrl = '/images/profile.jpg'
+imageWidth = 150
+imageHeight = 150
+imageTitle = 'Shane Schisler'
 title = "Hi, I'm a Software Engineer & Thinker 👋"
 subtitle = 'Welcome to my digital home. Here I document my personal engineering projects and write down my thoughts on system architecture and problem-solving.'
 
