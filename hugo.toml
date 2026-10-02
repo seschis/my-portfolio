@@ -34,14 +34,6 @@ title = "Hi, I'm a Software Engineer & Thinker 👋"
 subtitle = 'Welcome to my digital home. Here I document my personal engineering projects and write down my thoughts on system architecture and problem-solving.'
 
 [[params.profileMode.buttons]]
-name = '📝 Read My Thoughts'
-url = '/blog/'
-
-[[params.profileMode.buttons]]
-name = '💼 View My Projects'
-url = '/projects/'
-
-[[params.profileMode.buttons]]
 name = '📄 Download CV'
 url = '/resume.pdf'
 
