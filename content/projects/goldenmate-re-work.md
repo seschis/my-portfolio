@@ -4,7 +4,6 @@ date: 2026-10-01T18:09:42-04:00
 summary: 'Tearing down a GoldenMate battery management system: PCB analysis, firmware extraction over SWD, and Ghidra on an ARM Cortex-M0.'
 tags: ['reverse-engineering', 'embedded', 'ghidra', 'hardware']
 repo: 'seschis/goldenmate-re-work'
-draft: true
 ---
 
 {{< github-card >}}

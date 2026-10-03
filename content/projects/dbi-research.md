@@ -4,7 +4,6 @@ date: 2026-10-01T19:50:06-04:00
 summary: 'A research proof of concept: tracking tainted string data through a compiled Go binary at the machine-code level using Intel Pin, with no source-level hooks.'
 tags: ['security', 'reverse-engineering', 'go', 'binary-instrumentation']
 repo: 'seschis/dbi-research'
-draft: true
 ---
 
 {{< github-card >}}

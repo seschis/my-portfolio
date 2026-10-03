@@ -4,7 +4,6 @@ date: 2026-09-23
 summary: 'Multi-LLM triage for security scanner findings: sandboxed code reading, majority vote, tie adjudication, and CVSS 4.0 scoring.'
 tags: ['go', 'security', 'llm']
 repo: 'seschis/harmonia'
-draft: true
 ---
 
 {{< github-card >}}
