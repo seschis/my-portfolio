@@ -30,7 +30,7 @@ url = 'https://www.linkedin.com/in/shaneschisler'
 
 [params.profileMode]
 enabled = true
-imageUrl = '/images/profile.jpg'
+imageUrl = 'images/profile.jpg'
 imageWidth = 150
 imageHeight = 150
 imageTitle = 'Shane Schisler'
@@ -39,14 +39,14 @@ subtitle = 'Welcome to my digital home. Here I document my personal engineering 
 
 [[params.profileMode.buttons]]
 name = '📄 Download CV'
-url = '/resume.pdf'
+url = 'resume.pdf'
 
 [[menu.main]]
 name = 'Blog'
-url = '/blog/'
+url = 'blog/'
 weight = 1
 
 [[menu.main]]
 name = 'Projects'
-url = '/projects/'
+url = 'projects/'
 weight = 2

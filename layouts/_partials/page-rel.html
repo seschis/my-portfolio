@@ -1,0 +1,9 @@
+{{- $base := relLangURL "" -}}
+{{- $curFull := strings.TrimPrefix $base (.Cur.RelPermalink | default "") -}}
+{{- $cur := strings.TrimSuffix "/" $curFull -}}
+{{- $tgt := strings.TrimSuffix "/" (strings.TrimPrefix $base (.Tgt.RelPermalink | default "")) -}}
+{{- $depth := cond (hasSuffix $curFull "/") (add (strings.Count "/" $cur) 1) (cond (ne $cur "") (strings.Count "/" $cur) 0) -}}
+{{- $rel := strings.Repeat $depth "../" -}}
+{{- if $tgt -}}{{- $rel = printf "%s%s/" $rel $tgt -}}{{- end -}}
+{{- $rel = cond (and (ne $cur "") (eq $cur $tgt)) "./" ($rel | default "./") -}}
+{{- $rel -}}
