@@ -6,7 +6,6 @@ summary: 'General-purpose cover letter: markdown below, PDF linked from this pag
 > General-purpose cover letter. Bracketed placeholders are filled in per application. [Download the PDF version](../cover-letter.pdf)
 
 **Shane Schisler**
-Forest Hill, MD 21050
 shane.schisler@gmail.com | linkedin.com/in/shaneschisler | github.com/seschis
 
 [Date]
