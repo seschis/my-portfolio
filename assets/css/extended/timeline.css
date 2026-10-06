@@ -1,0 +1,75 @@
+/* Homepage timeline below the profile intro (see layouts/_partials/index_profile.html) */
+.main .profile {
+    flex-direction: column;
+    gap: calc(var(--gap) * 2);
+}
+
+.profile .profile_inner > span {
+    max-width: 560px;
+}
+
+.timeline {
+    width: 100%;
+    max-width: 640px;
+    text-align: start;
+}
+
+.timeline ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-inline-start: 2px solid var(--tertiary);
+}
+
+.timeline li {
+    position: relative;
+    display: grid;
+    grid-template-columns: 6rem 1fr;
+    gap: 0.25rem 1rem;
+    padding: 0 0 1.25rem 1.25rem;
+}
+
+.timeline li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: -6px;
+    top: 0.45rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--secondary);
+}
+
+.timeline-years {
+    color: var(--secondary);
+    font-size: 0.9rem;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.6;
+}
+
+.timeline-body {
+    color: var(--content);
+    line-height: 1.6;
+}
+
+.timeline-body p {
+    margin-top: 0.2rem;
+    color: var(--secondary);
+    font-size: 0.95rem;
+}
+
+.timeline-more {
+    margin-top: 0.5rem;
+    padding-inline-start: 1.25rem;
+    font-size: 0.95rem;
+}
+
+.timeline-more a {
+    box-shadow: 0 1px 0 var(--secondary);
+}
+
+@media (max-width: 560px) {
+    .timeline li {
+        grid-template-columns: 1fr;
+    }
+}

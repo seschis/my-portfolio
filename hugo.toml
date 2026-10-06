@@ -1,6 +1,6 @@
 baseURL = 'https://seschis.github.io/my-portfolio/'
 locale = 'en-us'
-title = 'Software Engineer & Thinker'
+title = 'Shane Schisler'
 theme = 'PaperMod'
 
 [markup.goldmark.renderer]
@@ -8,7 +8,7 @@ unsafe = true
 
 [params]
 env = 'production'
-description = 'Personal engineering projects and thoughts on system architecture and problem-solving.'
+description = 'Shane Schisler builds tooling that makes AI agents do security work reliably, after 25 years of kernels, hypervisors, and reverse engineering.'
 defaultTheme = 'auto'
 ShowReadingTime = true
 ShowShareButtons = false
@@ -34,8 +34,8 @@ imageUrl = 'images/profile.jpg'
 imageWidth = 150
 imageHeight = 150
 imageTitle = 'Shane Schisler'
-title = "Hi, I'm a Software Engineer & Thinker 👋"
-subtitle = 'Welcome to my digital home. Here I document my personal engineering projects and write down my thoughts on system architecture and problem-solving.'
+title = "Hi, I'm Shane Schisler"
+subtitle = 'I build the tooling that makes AI agents do security work reliably. I came to it after 25 years of kernels, hypervisors, and reverse engineering, which is why my first question about any agent is where it breaks and how to prove it does not.'
 
 [[params.profileMode.buttons]]
 name = '📄 Download CV'
