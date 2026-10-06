@@ -41,10 +41,6 @@ subtitle = 'Welcome to my digital home. Here I document my personal engineering 
 name = '📄 Download CV'
 url = 'resume.pdf'
 
-[[params.profileMode.buttons]]
-name = '📝 Cover Letter'
-url = 'cover-letter/'
-
 [[menu.main]]
 name = 'Blog'
 url = 'blog/'
@@ -54,3 +50,8 @@ weight = 1
 name = 'Projects'
 url = 'projects/'
 weight = 2
+
+[[menu.main]]
+name = 'About'
+url = 'about/'
+weight = 3
