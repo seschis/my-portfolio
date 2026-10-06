@@ -8,7 +8,7 @@ unsafe = true
 
 [params]
 env = 'production'
-description = 'Shane Schisler builds tooling that makes AI agents do security work reliably, after 25 years of kernels, hypervisors, and reverse engineering.'
+description = 'Shane Schisler builds tools that solve hard problems across cybersecurity, embedded systems, kernels, reverse engineering, and LLM agents.'
 defaultTheme = 'auto'
 ShowReadingTime = true
 ShowShareButtons = false
@@ -35,7 +35,7 @@ imageWidth = 150
 imageHeight = 150
 imageTitle = 'Shane Schisler'
 title = "Hi, I'm Shane Schisler"
-subtitle = 'I build the tooling that makes AI agents do security work reliably. I came to it after 25 years of kernels, hypervisors, and reverse engineering, which is why my first question about any agent is where it breaks and how to prove it does not.'
+subtitle = 'I like building tools that solve real problems, and I like hard puzzles. My work has spanned cybersecurity, embedded systems, kernel and driver development, reverse engineering, high-performance systems, and deep learning. That path led me to LLMs and agents, and to finding out what they can do on security problems. I know the stack from the kernel up to the application, so I like to go deep.'
 
 [[params.profileMode.buttons]]
 name = '📄 Download CV'
