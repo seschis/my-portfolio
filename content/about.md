@@ -1,26 +1,26 @@
 ---
 title: 'About'
-summary: 'Twenty-five years from kernels and hypervisors to making AI agents do security work reliably.'
+summary: 'Building tools, solving puzzles, and going deep from the kernel up to the application.'
 ShowToc: false
 ShowReadingTime: false
 ---
 
-The strongest security engineers I know have spent enough time at the low level (kernels, hypervisors, machine code) that when something new and powerful arrives, their first question is "where does it break, and how do we prove it doesn't?" That question has shaped twenty-five years of my career. It matters more than ever now that AI agents are writing, reviewing, and operating production software.
-
-## What I work on now
-
-I'm a Distinguished Engineer at Contrast Security, where I build the tooling that makes AI agents do security work reliably. Most recently I architected an agentic security-testing tool in Go. It stands up arbitrary applications, discovers their services, generates the container infrastructure, injects the Contrast runtime agent, and drives a multi-turn LLM loop until every API endpoint is proven reachable. Getting it production-ready meant per-run spend caps, token-budget scheduling, stuck-loop detection, and an eval harness that benchmarks agent behavior against OWASP vulnerable-application targets.
-
-Before that I architected a petabyte-scale S3 data lake on Iceberg, led the design of a Kafka/Flink event-driven architecture, and cut Java agent installation friction by 90% with a Linux kernel module.
+I like building tools that solve real problems, and I like the hard puzzles that come with them. Over 25 years that has taken me through cybersecurity, embedded systems, kernel and driver development, reverse engineering, high-performance systems, and deep learning. I've worked at every layer from the kernel to the application, and the problems I enjoy most are the ones where you need to understand several of those layers at once.
 
 ## How I got here
 
-My career runs from the ground up. I started with kernel drivers and 802.11 security research at Booz Allen, moved to hypervisor introspection and firmware reverse engineering at G2, and wrote a Type-1 hypervisor from scratch in C at Alithix. That depth is why I can look at an LLM agent loop and see where the failure modes live. Prompt injection, nondeterministic outputs, and runaway costs are the obvious ones. The subtle one is an agent that is confidently wrong.
+I started at Booz Allen writing Linux kernel drivers and doing 802.11 security research. At G2 I built hypervisor introspection for malware analysis and reverse engineered firmware on x86, ST10, and ARM. At Alithix I led a team that wrote a Type-1 hypervisor from scratch in C, and built the distributed test infrastructure that kept it and our embedded work honest.
 
-## Outside of work
+Since 2018 I've been at Contrast Security, now as a Distinguished Engineer. The puzzles there have ranged from a Linux kernel module that cut Java agent installation friction by 90%, to a petabyte-scale S3 data lake on Iceberg, to a Kafka/Flink event-driven architecture.
 
-I build and publish. [Harmonia]({{< relref "projects/harmonia.md" >}}) is a multi-LLM triage engine where a panel of models votes on security scanner findings and scores them with CVSS 4.0. [dbi-research]({{< relref "projects/dbi-research.md" >}}) tests whether Intel Pin can taint-track data through a compiled Go binary with no source-level hooks. For [GoldenMate]({{< relref "projects/goldenmate-re-work.md" >}}) I patched OpenOCD to debug an obscure Cortex-M0 MCU in a commercial battery management system.
+## What I'm working on now
 
-I also [write]({{< relref "blog" >}}) about the governance of AI code security, including where AI coding agents get security right by default and why AI security evaluations need clinical-trial blinding rigor.
+All of that led me to LLMs and agents, and to finding out what they can actually do on security problems. Most recently I built an agentic security-testing tool in Go. It stands up arbitrary applications, discovers their services, generates the container infrastructure, injects the Contrast runtime agent, and drives a multi-turn LLM loop until every API endpoint is proven reachable. Making it dependable meant per-run spend caps, token-budget scheduling, stuck-loop detection, and an eval harness that benchmarks agent behavior against OWASP vulnerable-application targets.
 
-The questions I keep coming back to are where an LLM can be trusted, how you prove it, how you bound its cost, and how you make the whole thing production-grade.
+Knowing the whole stack changes how I look at agents. Prompt injection, nondeterministic output, and runaway cost are the obvious failure modes. The interesting one is an agent that is confidently wrong, and catching it usually means going a layer deeper than the agent did.
+
+## Side projects
+
+I build and publish on my own time too. [Harmonia]({{< relref "projects/harmonia.md" >}}) is a multi-LLM triage engine where a panel of models votes on security scanner findings and scores them with CVSS 4.0. [dbi-research]({{< relref "projects/dbi-research.md" >}}) tests whether Intel Pin can taint-track data through a compiled Go binary with no source-level hooks. For [GoldenMate]({{< relref "projects/goldenmate-re-work.md" >}}) I patched OpenOCD to debug an obscure Cortex-M0 MCU in a commercial battery management system.
+
+I also [write]({{< relref "blog" >}}) about AI and code security, including where AI coding agents get security right by default and why AI security evaluations need clinical-trial blinding rigor.
